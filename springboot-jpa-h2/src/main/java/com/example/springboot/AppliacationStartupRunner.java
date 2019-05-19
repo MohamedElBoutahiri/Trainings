@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class AppliacationStartupRunner implements CommandLineRunner {
 
 	@Autowired
-	private HouseRepositoryyy repo;
+	private HouseRepository repo;
 	
 	@Override
 	public void run(String... args) throws Exception {
