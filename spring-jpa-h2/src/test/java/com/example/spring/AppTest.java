@@ -5,11 +5,11 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-class AppTest {
+public class AppTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void test() {
+
 	}
 
 }
