@@ -15,7 +15,7 @@ public class App {
 	/**
 	 * @param args
 	 */
-	public static void main(String... args) {
+	public static void main(String... a) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 		
 		List<House> houses=Arrays.asList(new House());
