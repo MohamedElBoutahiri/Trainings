@@ -15,7 +15,7 @@ import com.books.cloud.controllers.HomeController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(HomeController.class)
-public class ShoesCloudApplicationTest {
+public class BooksCloudApplicationTest {
 
 	@Autowired
 	private MockMvc mockMvc;
