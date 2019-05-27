@@ -13,12 +13,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class AppliacationStartupRunnerTest {
 
 	@Autowired
-	AppliacationStartupRunner app;
+	HouseRepository app;
 	
 	@Test
 	public void testRun() throws Exception {
-		System.out.println(LocalDate.now());
-		app.run();
+		app.save(new House(23));
+		System.out.println(app.findAll());
 	}
 
 }

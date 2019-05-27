@@ -1,4 +1,4 @@
-package com.shoes.cloud.controllers;
+package com.books.cloud.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

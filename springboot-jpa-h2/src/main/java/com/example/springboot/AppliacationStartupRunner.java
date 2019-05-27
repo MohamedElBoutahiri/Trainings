@@ -17,8 +17,8 @@ public class AppliacationStartupRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		repo.save(new House(23));
-		System.out.println(repo.findAll());
+		/*repo.save(new House(23));
+		System.out.println(repo.findAll());*/
 
 	}
 }

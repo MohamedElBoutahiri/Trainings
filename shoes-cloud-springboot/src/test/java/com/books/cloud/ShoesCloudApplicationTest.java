@@ -1,4 +1,4 @@
-package com.shoes.cloud;
+package com.books.cloud;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -7,11 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import com.shoes.cloud.controllers.HomeController;
+import com.books.cloud.controllers.HomeController;
 
 
 @RunWith(SpringRunner.class)
@@ -27,7 +26,7 @@ public class ShoesCloudApplicationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/"))
 		.andExpect(MockMvcResultMatchers.status().isOk())
 		.andExpect(MockMvcResultMatchers.view().name("home"))
-		.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("Welcome to Shoes Cloud")));
+		.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("Welcome to the Books ")));
 
 	}
 
