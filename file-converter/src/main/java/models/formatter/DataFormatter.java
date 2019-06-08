@@ -1,4 +1,4 @@
-package Models.Formatter;
+package models.formatter;
 
 import java.util.Map;
 import java.util.Map.Entry;

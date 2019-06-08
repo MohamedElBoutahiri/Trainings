@@ -1,4 +1,4 @@
-package Models.SQL;
+package models.sql;
 
 /**
  * DbParameters contains basic features of a database, like the name and the schema.

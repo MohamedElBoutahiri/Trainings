@@ -1,8 +1,8 @@
-package Models.Converter;
+package models.converter;
 
 import java.util.Map;
 
-import Models.Formatter.DataFormatter;
+import models.formatter.DataFormatter;
 
 public abstract class Converter {
 	@SuppressWarnings("rawtypes")

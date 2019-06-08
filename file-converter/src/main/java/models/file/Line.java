@@ -1,4 +1,4 @@
-package Models.File;
+package models.file;
 
 public class Line {
 	private String[] content;

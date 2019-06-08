@@ -1,4 +1,4 @@
-package Utils;
+package utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,10 +6,10 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map;
 
-import Models.File.File;
-import Models.File.Header;
-import Models.File.Line;
-import Models.Formatter.DataFormatter;
+import models.file.File;
+import models.file.Header;
+import models.file.Line;
+import models.formatter.DataFormatter;
 
 /**
  * This class has the main goel to facilitate the File creation.

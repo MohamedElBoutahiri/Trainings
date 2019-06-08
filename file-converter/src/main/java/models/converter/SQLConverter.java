@@ -1,4 +1,4 @@
-package Models.Converter;
+package models.converter;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,10 +7,10 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import Models.File.File;
-import Models.File.Line;
-import Models.SQL.DbParameters;
-import Models.SQL.SQLOperations;
+import models.file.File;
+import models.file.Line;
+import models.sql.DbParameters;
+import models.sql.SQLOperations;
 
 public class SQLConverter extends Converter {
 

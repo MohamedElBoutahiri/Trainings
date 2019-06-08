@@ -1,17 +1,17 @@
-package App;
+package app;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import Models.Converter.Converter;
-import Models.Converter.SQLConverter;
-import Models.File.File;
-import Models.Formatter.DataFormatter;
-import Models.Formatter.DateTimetoTimeStampFormatter;
-import Models.SQL.DbParameters;
-import Models.SQL.SQLOperations;
-import Utils.FileUtils;
+import models.file.File;
+import models.formatter.DataFormatter;
+import models.formatter.DateTimetoTimeStampFormatter;
+import models.sql.DbParameters;
+import models.sql.SQLOperations;
+import utils.FileUtils;
+import models.converter.Converter;
+import models.converter.SQLConverter;
 
 /**
  * Hello world!

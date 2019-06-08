@@ -1,4 +1,4 @@
-package Models.SQL;
+package models.sql;
 
 /**
  * SQLOperations contains the basic SQL operations. 

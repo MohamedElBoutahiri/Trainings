@@ -1,10 +1,10 @@
-package Models.File;
+package models.file;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import Models.Formatter.DataFormatter;
+import models.formatter.DataFormatter;
 
 public class File {
 	private Header header;
