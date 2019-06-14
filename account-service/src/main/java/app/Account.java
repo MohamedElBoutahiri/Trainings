@@ -53,6 +53,20 @@ public class Account {
 		this.treasury = treasury;
 	}
 
+	public boolean transfer(Account receptor, double money) {
+
+		boolean isDone = true;
+
+		if (this.isTreasury()) {
+			this.setBalance(this.getBalance() - money);
+			receptor.setBalance(receptor.getBalance() + money);
+		} else if (this.getBalance() < money) {
+			isDone = false;
+		}
+		return isDone;
+
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

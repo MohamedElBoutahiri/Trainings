@@ -34,22 +34,24 @@ public class AccountController {
 	}
 
 	@RequestMapping("/transfer")
-	public String transfer(@RequestParam(required = true) Long idEmisor,
-			@RequestParam(required = true) Long idReceptor, @RequestParam(required = true) double money) {
+	public String transfer(@RequestParam(required = true) Long idEmisor, @RequestParam(required = true) Long idReceptor,
+			@RequestParam(required = true) double money) {
 
-		Account emisor = accountRepo.findById(idEmisor).orElseThrow(null);
-		Account receptor = accountRepo.findById(idReceptor).orElseThrow(null);
+		Account emisor = accountRepo.findById(idEmisor)
+				.orElseThrow(() -> new RuntimeException("Account with id" + idEmisor + " not found"));
+		Account receptor = accountRepo.findById(idReceptor)
+				.orElseThrow(() -> new RuntimeException("Account with id" + idReceptor + " not found"));
 
 		String message = "";
 
-		if (emisor.isTreasury()) {
-			emisor.setBalance(emisor.getBalance() - money);
-			receptor.setBalance(receptor.getBalance() + money);
+		if (emisor.transfer(receptor, money)) {
 			message = "The transfer has been done correctly";
-		} else if (emisor.getBalance() < money) {
+		} else {
 			message = "Ooops! The account has not enough money. The transfer is not possible. Get some cash ;)";
 		}
+
 		accountRepo.flush();
+
 		return message;
 	}
 }
