@@ -29,19 +29,27 @@ public class AccountController {
 
 	@GetMapping("/account/{id}")
 	public Account findById(@PathVariable Long id) {
-		// normally we throw an exception
-		return accountRepo.findById(id).orElseThrow(null);
+		// normally we throw a custom exception
+		return accountRepo.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
 	}
 
 	@RequestMapping("/transfer")
-	public Account transfer(@RequestParam(required = true) Long idEmisor,
+	public String transfer(@RequestParam(required = true) Long idEmisor,
 			@RequestParam(required = true) Long idReceptor, @RequestParam(required = true) double money) {
 
 		Account emisor = accountRepo.findById(idEmisor).orElseThrow(null);
 		Account receptor = accountRepo.findById(idReceptor).orElseThrow(null);
 
-		receptor.balance += emisor.balance;
+		String message = "";
 
-		return receptor;
+		if (emisor.isTreasury()) {
+			emisor.setBalance(emisor.getBalance() - money);
+			receptor.setBalance(receptor.getBalance() + money);
+			message = "The transfer has been done correctly";
+		} else if (emisor.getBalance() < money) {
+			message = "Ooops! The account has not enough money. The transfer is not possible. Get some cash ;)";
+		}
+		accountRepo.flush();
+		return message;
 	}
 }
