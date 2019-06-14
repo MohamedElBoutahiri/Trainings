@@ -34,3 +34,7 @@ We tried to test the application, once we have checked that the requirements are
 We didn't test every single detail, because we consider that the goal of this exercise is not making the whole application 100% perfect. So we did the main tests, in order to show some testing skills.
 
 Also, we could refactor the code, like creating constants with text or enums. We are also conscient about the granularity of commits.
+
+NOTE: is possible that we could have missed some situation in the requirements. We have developed the solution taking into account that we have understood it.
+
+PD: We, means I ;)
