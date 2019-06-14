@@ -23,13 +23,14 @@ public class AccountController {
 	}
 
 	@PostMapping("/account")
-	public Account create(@RequestBody Account newAccount) {
-		return accountRepo.save(newAccount);
+	public List<Account> create(@RequestBody Account newAccount) {
+		accountRepo.save(newAccount);
+		return accountRepo.findAll();
 	}
 
 	@GetMapping("/account/{id}")
 	public Account findById(@PathVariable Long id) {
-		// normally we throw a custom exception
+		//Normally we throw a custom exception
 		return accountRepo.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
 	}
 

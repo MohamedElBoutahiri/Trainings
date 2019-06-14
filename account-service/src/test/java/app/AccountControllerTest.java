@@ -1,7 +1,6 @@
 package app;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -61,11 +60,14 @@ public class AccountControllerTest {
 		account.setName("Mohamed");
 		account.setTreasury(false);
 
-		given(accountRepo.save(any())).willReturn(account);
+		List<Account> accounts = Arrays.asList(account);
+		
+		given(accountRepo.findAll()).willReturn(accounts);
+		
 
 		mvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(account))).andExpect(status().isOk())
-				.andExpect(jsonPath("name", is(account.getName())));
+				.andExpect(jsonPath("$[0].name", is(account.getName())));
 
 	}
 
